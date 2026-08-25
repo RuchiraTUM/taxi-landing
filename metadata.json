@@ -1,8 +1,0 @@
-{
-  "name": "FleetMind - AI Fleet Dispatch Intelligence",
-  "description": "Next-generation AI dispatch brain for taxi and mobility fleets to eliminate Leer KM and maximize vehicle yield.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
