@@ -17,7 +17,7 @@ const steps = [
   {
     icon: Cpu,
     step: '03',
-    title: 'Live Dispatch Neural Match',
+    title: 'Live Dispatch Automated Match',
     body: 'Every trip is matched in milliseconds across dozens of dynamic parameters.',
   },
 ]
@@ -28,7 +28,7 @@ const comparison = [
     legacy:
       'Manual intuition, clogged call queues, and naive straight-line radius circles',
     fleetmind:
-      'Neural AI matching in <80ms across dozens of dynamic live parameters',
+      'Automated AI matching in <80ms across dozens of dynamic live parameters',
   },
   {
     label: 'Leer KM (Deadhead)',
@@ -55,7 +55,7 @@ export function Solution() {
   return (
     <section id="paradigm" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
       <div className="max-w-3xl">
-        <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-foreground/70">
+        <span className="font-mono text-sm font-semibold uppercase tracking-widest text-accent-foreground/70">
           The Paradigm Shift
         </span>
         <h2 className="mt-3 text-pretty text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
@@ -89,8 +89,8 @@ export function Solution() {
                   {s.step}
                 </span>
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-ink">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              <h3 className="mt-4 text-xl font-semibold text-ink">{s.title}</h3>
+              <p className="mt-2 text-base leading-relaxed text-ink-soft">
                 {s.body}
               </p>
             </Reveal>
@@ -99,8 +99,8 @@ export function Solution() {
       </div>
 
       {/* Comparison table */}
-      <div className="mt-16">
-        <h3 className="text-center text-xl font-bold tracking-tight text-ink sm:text-2xl">
+      <Reveal className="mt-16">
+        <h3 className="text-center text-2xl font-bold tracking-tight text-ink sm:text-3xl">
           Legacy Dispatch vs. FleetMind AI Brain
         </h3>
 
@@ -109,12 +109,12 @@ export function Solution() {
             {/* Header row */}
             <div className="hidden bg-dark px-5 py-4 md:block" />
             <div className="hidden bg-dark px-5 py-4 md:block">
-              <span className="text-sm font-semibold text-dark-foreground/60">
+              <span className="text-base font-semibold text-dark-foreground/60">
                 Legacy Dispatch
               </span>
             </div>
             <div className="hidden bg-dark px-5 py-4 md:block">
-              <span className="text-sm font-semibold text-accent">
+              <span className="text-base font-semibold text-accent">
                 FleetMind AI Brain
               </span>
             </div>
@@ -125,33 +125,33 @@ export function Solution() {
                 className={`contents`}
               >
                 <div
-                  className={`bg-surface px-5 py-4 text-sm font-semibold text-ink ${
+                  className={`bg-surface px-5 py-4 text-base font-semibold text-ink transition-colors ${
                     i > 0 ? 'md:border-t md:border-border' : ''
                   }`}
                 >
                   {row.label}
                 </div>
                 <div
-                  className={`flex items-start gap-2.5 bg-surface px-5 py-4 text-sm leading-relaxed text-ink-soft ${
+                  className={`flex items-start gap-2.5 bg-surface px-5 py-4 text-base leading-relaxed text-ink-soft ${
                     i > 0 ? 'md:border-t md:border-border' : ''
                   }`}
                 >
-                  <X className="mt-0.5 h-4 w-4 shrink-0 text-muted" aria-hidden="true" />
+                  <X className="mt-0.5 h-5 w-5 shrink-0 text-muted" aria-hidden="true" />
                   <span>{row.legacy}</span>
                 </div>
                 <div
-                  className={`flex items-start gap-2.5 bg-positive-soft px-5 py-4 text-sm leading-relaxed text-ink ${
+                  className={`flex items-start gap-2.5 bg-positive-soft px-5 py-4 text-base leading-relaxed text-ink ${
                     i > 0 ? 'md:border-t md:border-border' : 'border-t border-border md:border-t-0'
                   }`}
                 >
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-positive" aria-hidden="true" />
+                  <Check className="mt-0.5 h-5 w-5 shrink-0 text-positive" aria-hidden="true" />
                   <span>{row.fleetmind}</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

@@ -30,7 +30,7 @@ export function Problem() {
     <section className="border-y border-border bg-surface">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
         <div className="max-w-3xl">
-          <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent-foreground/70">
+          <span className="font-mono text-sm font-semibold uppercase tracking-widest text-accent-foreground/70">
             The Problem
           </span>
           <h2 className="mt-3 text-pretty text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
@@ -50,14 +50,14 @@ export function Problem() {
               <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-dark text-accent transition-transform duration-300 group-hover:scale-110">
                 <point.icon className="h-5 w-5" aria-hidden="true" />
               </span>
-              <h3 className="mt-4 text-lg font-semibold text-ink">
+              <h3 className="mt-4 text-xl font-semibold text-ink">
                 {point.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              <p className="mt-2 text-base leading-relaxed text-ink-soft">
                 {point.body}
               </p>
               {point.cost && (
-                <p className="mt-3 border-t border-border pt-3 text-xs font-medium text-muted">
+                <p className="mt-3 border-t border-border pt-3 text-sm font-medium text-muted">
                   {point.cost}
                 </p>
               )}

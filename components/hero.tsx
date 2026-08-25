@@ -19,7 +19,7 @@ const benchmarks = [
   },
   {
     icon: Zap,
-    title: 'Neural Match Speed',
+    title: 'Automated Match Speed',
     value: 'Instant',
     note: 'Sub-80ms trip matching',
   },
@@ -36,34 +36,35 @@ export function Hero({ onRequestPilot }: { onRequestPilot: () => void }) {
     <section id="top" className="relative overflow-hidden">
       <DispatchGrid />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_75%_0%,rgba(250,204,21,0.10),transparent_70%)]" />
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:py-24">
+      <div className="relative z-10 mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-5 py-14 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:py-20">
         {/* Left: copy */}
         <div className="animate-fade-up">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-medium text-ink-soft shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm font-medium text-ink-soft shadow-sm">
             <span className="h-2 w-2 rounded-full bg-positive animate-pulse-dot" aria-hidden="true" />
             Move your cars where the next trip WILL be.
           </span>
 
           <h1 className="mt-6 text-pretty text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
             Do More With The{' '}
-            <span className="border-b-4 border-accent pb-1">Same Fleet.</span>
+            <span className="border-b-4 border-accent pb-1">Same Taxi Fleet.</span>
           </h1>
 
-          <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-ink-soft">
-            Run a business backed by solid data instead of gut feelings.
+          <p className="mt-6 max-w-md text-pretty text-xl leading-relaxed text-ink-soft">
+            Run a business backed by your own company past trip data instead of
+            gut feelings.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button
               onClick={onRequestPilot}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent-hover"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-base font-semibold text-accent-foreground transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/25"
             >
-              Join Us to Do More With the Same Car
+              Join Us to Do More With the Same Taxi Car
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </button>
             <a
               href="#paradigm"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-muted/10"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-base font-semibold text-ink transition-colors hover:bg-muted/10"
             >
               See The Paradigm Shift
             </a>
@@ -77,7 +78,7 @@ export function Hero({ onRequestPilot }: { onRequestPilot: () => void }) {
                   <span className="block text-2xl font-bold tracking-tight text-ink">
                     {stat.value}
                   </span>
-                  <span className="mt-0.5 block text-xs font-medium text-muted">
+                  <span className="mt-0.5 block text-sm font-medium text-muted">
                     {stat.label}
                   </span>
                 </dd>
@@ -95,7 +96,7 @@ export function Hero({ onRequestPilot }: { onRequestPilot: () => void }) {
                   <span className="absolute inset-0 rounded-full bg-positive animate-radar-ping" />
                   <span className="h-2 w-2 rounded-full bg-positive" />
                 </span>
-                <span className="text-sm font-semibold text-dark-foreground">
+                <span className="text-base font-semibold text-dark-foreground">
                   Live Optimization Benchmark
                 </span>
               </div>
@@ -116,10 +117,10 @@ export function Hero({ onRequestPilot }: { onRequestPilot: () => void }) {
                     <b.icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-dark-foreground/80">
+                    <p className="text-base font-medium text-dark-foreground/80">
                       {b.title}
                     </p>
-                    <p className="text-xs text-dark-foreground/50">{b.note}</p>
+                    <p className="text-sm text-dark-foreground/50">{b.note}</p>
                   </div>
                   <span className="font-mono text-lg font-bold text-positive">
                     {b.value}
@@ -130,7 +131,7 @@ export function Hero({ onRequestPilot }: { onRequestPilot: () => void }) {
 
             <div className="mt-5 flex items-start gap-2 rounded-lg bg-white/[0.03] px-4 py-3">
               <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-positive" aria-hidden="true" />
-              <p className="text-xs leading-relaxed text-dark-foreground/60">
+              <p className="text-sm leading-relaxed text-dark-foreground/60">
                 <span className="font-semibold text-dark-foreground/90">Zero Risk:</span>{' '}
                 Connects to your past trip logs in shadow mode.
               </p>
