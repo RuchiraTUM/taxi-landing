@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRight, TrendingUp, Zap, Gauge, ShieldCheck } from 'lucide-react'
+import { DispatchGrid } from '@/components/dispatch-grid'
 
 const trustStats = [
   { value: '-38%', label: 'Leer KM' },
@@ -33,8 +34,9 @@ const benchmarks = [
 export function Hero({ onRequestPilot }: { onRequestPilot: () => void }) {
   return (
     <section id="top" className="relative overflow-hidden">
+      <DispatchGrid />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_75%_0%,rgba(250,204,21,0.10),transparent_70%)]" />
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:py-24">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:py-24">
         {/* Left: copy */}
         <div className="animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3.5 py-1.5 text-xs font-medium text-ink-soft shadow-sm">
@@ -88,14 +90,19 @@ export function Hero({ onRequestPilot }: { onRequestPilot: () => void }) {
         <div className="animate-fade-up lg:justify-self-end" style={{ animationDelay: '80ms' }}>
           <div className="w-full max-w-md rounded-2xl border border-dark-border bg-dark p-6 shadow-2xl shadow-dark/20">
             <div className="flex items-center justify-between border-b border-dark-border pb-4">
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-positive animate-pulse-dot" aria-hidden="true" />
+              <div className="flex items-center gap-2.5">
+                <span className="relative flex h-3 w-3 items-center justify-center" aria-hidden="true">
+                  <span className="absolute inset-0 rounded-full bg-positive animate-radar-ping" />
+                  <span className="h-2 w-2 rounded-full bg-positive" />
+                </span>
                 <span className="text-sm font-semibold text-dark-foreground">
                   Live Optimization Benchmark
                 </span>
               </div>
-              <span className="font-mono text-[11px] uppercase tracking-wider text-accent">
-                Real-time
+              <span className="relative flex h-7 w-7 items-center justify-center" aria-hidden="true">
+                <span className="absolute inset-0 rounded-full border border-dark-border" />
+                <span className="absolute inset-0 rounded-full animate-radar-sweep bg-[conic-gradient(from_0deg,transparent_0deg,var(--accent)_60deg,transparent_120deg)] opacity-70" />
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               </span>
             </div>
 

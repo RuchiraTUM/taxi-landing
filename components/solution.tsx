@@ -1,4 +1,5 @@
 import { Database, Radar, Cpu, Check, X } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 
 const steps = [
   {
@@ -63,26 +64,38 @@ export function Solution() {
       </div>
 
       {/* Pipeline */}
-      <div className="mt-12 grid gap-4 md:grid-cols-3">
-        {steps.map((s) => (
-          <div
-            key={s.step}
-            className="relative flex flex-col rounded-xl border border-border bg-surface p-6"
-          >
-            <div className="flex items-center justify-between">
-              <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/15 text-accent-foreground">
-                <s.icon className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <span className="font-mono text-2xl font-bold text-border">
-                {s.step}
-              </span>
-            </div>
-            <h3 className="mt-4 text-lg font-semibold text-ink">{s.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-              {s.body}
-            </p>
-          </div>
-        ))}
+      <div className="relative mt-12">
+        {/* Route connector with a traveling vehicle (desktop) */}
+        <div
+          className="pointer-events-none absolute left-0 right-0 top-[46px] hidden md:block"
+          aria-hidden="true"
+        >
+          <div className="border-t border-dashed border-accent/40" />
+          <span className="absolute top-1/2 h-2.5 w-2.5 -translate-y-1/2 animate-pipeline-move rounded-full bg-accent shadow-[0_0_12px_2px_var(--accent)]" />
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {steps.map((s, i) => (
+            <Reveal
+              key={s.step}
+              delay={i * 120}
+              className="group relative flex flex-col rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5"
+            >
+              <div className="flex items-center justify-between">
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent/15 text-accent-foreground transition-transform duration-300 group-hover:scale-110">
+                  <s.icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="font-mono text-2xl font-bold text-border">
+                  {s.step}
+                </span>
+              </div>
+              <h3 className="mt-4 text-lg font-semibold text-ink">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+                {s.body}
+              </p>
+            </Reveal>
+          ))}
+        </div>
       </div>
 
       {/* Comparison table */}

@@ -1,4 +1,5 @@
 import { Fuel, Phone, Radar, TrendingDown } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
 
 const painPoints = [
   {
@@ -40,12 +41,13 @@ export function Problem() {
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          {painPoints.map((point) => (
-            <div
+          {painPoints.map((point, i) => (
+            <Reveal
               key={point.title}
-              className="group flex flex-col rounded-xl border border-border bg-background p-6 transition-colors hover:border-ink/20"
+              delay={i * 90}
+              className="group flex flex-col rounded-xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-lg hover:shadow-ink/5"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-dark text-accent">
+              <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-dark text-accent transition-transform duration-300 group-hover:scale-110">
                 <point.icon className="h-5 w-5" aria-hidden="true" />
               </span>
               <h3 className="mt-4 text-lg font-semibold text-ink">
@@ -59,7 +61,7 @@ export function Problem() {
                   {point.cost}
                 </p>
               )}
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
